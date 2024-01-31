@@ -1,0 +1,297 @@
+@charset "UTF-8";
+/*"OpenAI. (2023). Guidance on CSS Styling and Implementation. ChatGPT Session."
+General Reference
+ */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+header {
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: red;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.search-container {
+  margin: 20px;
+  
+
+}
+.image-placeholder img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.image-placeholder {
+  width: 100%;
+ 
+  height: 300px;
+  margin-bottom: 20px;
+  
+  background-color: grey;
+  object-fit: contain;
+  border-radius: 25px;
+}
+
+.search-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.restaurant-name {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+#searchbtn {
+  margin-left: 10px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.radio-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-options div {
+  display: flex;
+}
+
+.radio-options label {
+  margin-right: 10px;
+}
+
+.coordinates-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.coordinate,
+.maps-btn {
+  flex-basis: calc(33.333% - 10px);
+  padding: 10px;
+}
+
+.coordinate {
+  margin-right: 5px;
+  
+}
+
+.maps-btn {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#mapPopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  
+  height: 50%;
+  
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+ 
+}
+
+#searchResults {
+    width: 100%;
+}
+
+
+.result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; 
+}
+
+
+.restaurant-image img.result-image {
+    width: 120px; 
+    height: 120px; 
+    object-fit: cover; 
+    margin-right: 20px; 
+    border-radius: 5px; 
+}
+.detail-image img{
+	width: 240px; 
+    height: 240px; 
+    object-fit: cover; 
+    margin-right: 20px;
+    border-radius: 5px; 
+}
+
+
+.restaurant-info {
+    flex-grow: 1;
+}
+
+.restaurant-name {
+    font-size: 1.25em; 
+    margin: 0 0 5px;
+}
+
+.restaurant-address {
+    margin: 0; 
+    color: #333; 
+}
+
+.yelp-link {
+    color: #0073bb; 
+    text-decoration: none; 
+    font-size: 0.9em;
+}
+
+.yelp-link:hover {
+    text-decoration: underline; 
+}
+
+#restaurantDetails {
+    display: block;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+
+.restaurant-details-content {
+    display: flex;
+    align-items: flex-start; 
+}
+
+
+.restaurant-details-content img {
+    flex-shrink: 0;
+    width: 120px; 
+    height: 120px; 
+    border-radius: 10px; 
+    margin-right: 20px; 
+    object-fit: cover;
+}
+
+.restaurant-info {
+    flex-grow: 1;
+}
+
+.button {
+    display: block;
+    width: 100%; 
+    padding: 10px 20px;
+    margin-top: 10px; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.add-to-favorites {
+    background-color: #ffcc00; 
+}
+
+.add-to-favorites:hover {
+    background-color: #e6b800; 
+}
+
+.add-reservation {
+    background-color: #ff5733; 
+}
+
+.add-reservation:hover {
+    background-color: #e64d29;
+}
+
+.reservation-form {
+    display: none; 
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.reservation-form.visible {
+    display: flex; 
+}
+
+.reservation-form input,
+.reservation-form textarea {
+    margin-bottom: 10px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reservation-form input[type="date"],
+.reservation-form input[type="time"] {
+    flex-basis: 48%; 
+}
+
+.reservation-form .reservation-notes {
+    flex-grow: 1; 
+}
+
+.submit-reservation {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.restaurant-image-link {
+    display: inline-block; 
+    border-radius: 10px; 
+    overflow: hidden; 
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joe's Table</title>
+  <link rel="stylesheet" href="home.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0-yjPEhT3ZZIWXfEUEjI8bOcCqvbVBlI&callback=initMap" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Joe's Table!</h1>
+    <nav>
+      <ul>
+        <li><a href="/A4/home.html">Home</a></li>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/reservations">Reservations</a></li>
+        <li><a href="/A4/login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="search-container">
+    <div class="image-placeholder"><img src="foodimg.jpg"></div>
+    <form id="searchForm">
+      <div class="form-row search-row">
+        <input type="text" placeholder="Restaurant Name" name="restaurantName" class="restaurant-name">
+        <button type="submit" id="searchbtn">🔍</button>
+        <div class="radio-options">
+          <div>
+            <label><input type="radio" name="searchOption" value="bestMatch"> Best Match</label>
+            <label><input type="radio" name="searchOption" value="rating"> Rating</label>
+          </div>
+          <div>
+            <label><input type="radio" name="searchOption" value="reviewCount"> Review Count</label>
+            <label><input type="radio" name="searchOption" value="distance"> Distance</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row coordinates-row">
+        <input type="text" placeholder="Latitude" name="latitude" id="latitude" class="coordinate">
+        <input type="text" placeholder="Longitude" name="longitude" id="longitude" class="coordinate">
+        <button type="button" class="maps-btn" onclick="showMap()">Google Maps (Drop a pin!)</button>
+      </div>
+    </form>
+    <div id="searchResults"></div>
+    <div id="restaurantDetails" style="display:none;"></div>
+  </div>
+
+  <div id="mapPopup" style="display:none;">
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    <button onclick="closeMap()">Close Map</button>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>

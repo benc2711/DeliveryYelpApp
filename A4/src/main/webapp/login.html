@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joe's Table</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <header>
+    <h1>Joe's Table!</h1>
+    <nav>
+      <ul>
+        <li><a href="/A4/home.html">Home</a></li>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/reservations">Reservations</a></li>
+        <li><a href="/A4/login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="login">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button id="login-btn" type="submit">Sign In</button>
+      </form>
+    </section>
+    <section class="signup">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="input-group">
+          <label for="newUsername">Username</label>
+          <input type="text" id="newUsername" required>
+        </div>
+        <div class="input-group">
+          <label for="newPassword">Password</label>
+          <input type="password" id="newPassword" required>
+        </div>
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" required>
+        </div>
+        <div class="input-group">
+          <input type="checkbox" id="terms">
+          <label for="terms">I have read and agree to all terms and conditions of Joe's Table.</label>
+        </div>
+        <button id="register-btn" type="submit">Create Account</button>
+      </form>
+    </section>
+  </main>
+  <script src="login.js"></script>
+</body>
+
+</html>
